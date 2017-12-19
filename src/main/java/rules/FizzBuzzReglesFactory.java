@@ -9,7 +9,8 @@ public class FizzBuzzReglesFactory {
 		return Arrays.asList(
 								new RegleFizzBuzz(),
 								new RegleBuzz(),
-								new RegleFizz());
+								new RegleFizz(),
+								new RegleBang());
 	}
 
 }
