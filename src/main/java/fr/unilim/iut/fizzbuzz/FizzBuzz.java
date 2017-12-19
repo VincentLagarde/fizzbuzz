@@ -3,18 +3,25 @@ package fr.unilim.iut.fizzbuzz;
 import java.util.Arrays;
 import java.util.List;
 
+import rules.FizzBuzzReglesFactory;
 import rules.Regle;
 import rules.RegleBuzz;
 import rules.RegleFizz;
 import rules.RegleFizzBuzz;
 
+
+
 public class FizzBuzz{
 	
-	List<Regle> regles = Arrays.asList(
-							new RegleFizzBuzz(),
-							new RegleBuzz(),
-							new RegleFizz());
-			
+	List<Regle> regles;
+
+	public FizzBuzz(){
+		this(FizzBuzzReglesFactory.build());
+	}
+	
+	public FizzBuzz(List<Regle> regles){
+		this.regles = regles;
+	}
 
 	public String donnerLaReponsePour(Integer nombre) {
 		
