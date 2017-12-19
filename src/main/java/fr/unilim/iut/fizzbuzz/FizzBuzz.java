@@ -1,24 +1,25 @@
 package fr.unilim.iut.fizzbuzz;
 
+import java.util.ArrayList;
+
+
 public class FizzBuzz{
 	
 
 	public String donnerLaReponsePour(Integer nombre) {
-		String chaine ="";
+		RegleFizzBuzz regleFizzBuzz = new RegleFizzBuzz();
 		
-		if (isFizz(nombre))
-			chaine = "fizz";
+		if(regleFizzBuzz.isVerifieePar(nombre))
+			return RegleFizzBuzz.valeurAAfficherSiRegleVerifiee();
 		
-		if (isBuzz(nombre))
-			chaine += "buzz";
+		if(isBuzz(nombre))
+			return "buzz";
 		
+		if(isFizz(nombre))
+			return "fizz";
 		
-		if(chaine=="")
-			chaine = String.valueOf(nombre);
-		
-		return chaine;
+		return String.valueOf(nombre);
 	}
-
 
 	private boolean isBuzz(Integer nombre) {
 		return 0 == nombre % 5;
