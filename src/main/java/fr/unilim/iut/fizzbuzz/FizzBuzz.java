@@ -1,24 +1,21 @@
 package fr.unilim.iut.fizzbuzz;
 
-import java.util.ArrayList;
-
-
 public class FizzBuzz{
 	
+	Regle regleFizzBuzz = new RegleFizzBuzz();
+	Regle regleBuzz = new RegleBuzz();
+	Regle regleFizz = new RegleFizz();
 
 	public String donnerLaReponsePour(Integer nombre) {
-		RegleFizzBuzz regleFizzBuzz = new RegleFizzBuzz();
-		RegleBuzz regleBuzz = new RegleBuzz();
-		RegleFizz regleFizz = new RegleFizz();
 		
 		if(regleFizzBuzz.isVerifieePar(nombre))
-			return RegleFizzBuzz.valeurAAfficherSiRegleVerifiee();
+			return regleFizzBuzz.valeurAAfficherSiRegleVerifiee();
 		
 		if(regleBuzz.isVerifieePar(nombre))
-			return RegleBuzz.valeurAAfficherSiRegleVerifiee();
+			return regleBuzz.valeurAAfficherSiRegleVerifiee();
 		
 		if(regleFizz.isVerifieePar(nombre))
-			return RegleFizz.valeurAAfficherSiRegleVerifiee();
+			return regleFizz.valeurAAfficherSiRegleVerifiee();
 		
 		
 		return String.valueOf(nombre);

@@ -1,12 +1,13 @@
 package fr.unilim.iut.fizzbuzz;
 
-public class RegleFizz {
+public class RegleFizz implements Regle {
 
 	public boolean isVerifieePar(Integer nombre) {
 		return 0 == nombre % 3;
 	}
+	
 
-	public static String valeurAAfficherSiRegleVerifiee() {
+	public String valeurAAfficherSiRegleVerifiee() {
 		return "fizz";
 	}
 
