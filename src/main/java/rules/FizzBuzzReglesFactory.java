@@ -7,6 +7,7 @@ public class FizzBuzzReglesFactory {
 	
 	public static List<Regle> build() {
 		return Arrays.asList(
+								new RegleFizzBuzzBang(),
 								new RegleFizzBuzz(),
 								new RegleBuzz(),
 								new RegleFizz(),
