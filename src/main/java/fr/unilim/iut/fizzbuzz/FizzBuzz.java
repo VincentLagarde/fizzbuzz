@@ -1,5 +1,8 @@
 package fr.unilim.iut.fizzbuzz;
 
+import java.util.Arrays;
+import java.util.List;
+
 import rules.Regle;
 import rules.RegleBuzz;
 import rules.RegleFizz;
@@ -7,21 +10,19 @@ import rules.RegleFizzBuzz;
 
 public class FizzBuzz{
 	
-	Regle regleFizzBuzz = new RegleFizzBuzz();
-	Regle regleBuzz = new RegleBuzz();
-	Regle regleFizz = new RegleFizz();
+	List<Regle> regles = Arrays.asList(
+							new RegleFizzBuzz(),
+							new RegleBuzz(),
+							new RegleFizz());
+			
 
 	public String donnerLaReponsePour(Integer nombre) {
 		
-		if(regleFizzBuzz.isVerifieePar(nombre))
-			return regleFizzBuzz.valeurAAfficherSiRegleVerifiee();
-		
-		if(regleBuzz.isVerifieePar(nombre))
-			return regleBuzz.valeurAAfficherSiRegleVerifiee();
-		
-		if(regleFizz.isVerifieePar(nombre))
-			return regleFizz.valeurAAfficherSiRegleVerifiee();
-		
+		for(Regle regle : regles){
+			if(regle.isVerifieePar(nombre)){
+				return regle.valeurAAfficherSiRegleVerifiee();
+			}
+		}
 		
 		return String.valueOf(nombre);
 	}
